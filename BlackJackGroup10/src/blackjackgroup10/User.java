@@ -9,5 +9,17 @@ package blackjackgroup10;
  * @author chuong5850
  */
 public class User {
+     private String name;
+    private String password;
     
+    /**
+     * a constructor that takes in the user's name and password
+     * @param givenName
+     * @param givenPass 
+     */
+    public User(String givenName, String givenPass)
+    {
+        name = givenName;
+        password=givenPass;
+    }
 }

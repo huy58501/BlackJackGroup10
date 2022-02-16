@@ -7,7 +7,7 @@ package blackjackgroup10;
 /**
  *
  * @author chuong5850
- * author joshua R
+ * author Joshua R
  */
 public class Card {
     public enum Suit{

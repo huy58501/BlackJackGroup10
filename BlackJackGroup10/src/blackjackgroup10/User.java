@@ -7,7 +7,6 @@ package blackjackgroup10;
 /**
  *
  * @author chuong5850
- * author Joshua R
  */
 public class User {
     

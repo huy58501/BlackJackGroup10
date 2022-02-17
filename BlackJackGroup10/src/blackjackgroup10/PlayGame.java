@@ -14,5 +14,7 @@ public class PlayGame {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        Register User1 = new Register();
+        User1.registerUser();
     }
 }

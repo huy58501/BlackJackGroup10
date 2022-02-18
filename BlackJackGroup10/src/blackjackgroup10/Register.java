@@ -5,10 +5,8 @@
 package blackjackgroup10;
 
 import java.util.Scanner;
-
 /**
  *
- * @author chuong5850
  */
 public class Register {
     private String name;
@@ -51,6 +49,10 @@ public class Register {
         System.out.println(name + " you are registered ");
 
         input.close();
+        // UserCheck.passCheck();
     }
-    
+    public void userLogin(){
+       // UserCheck.passCheck();
+       // UserCheck.userCheck();
+    }
 }

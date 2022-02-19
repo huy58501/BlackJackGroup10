@@ -23,23 +23,23 @@ public class Card {
     //public static final String[] SUITS={"Hearts","Diamonds","Spades","Clubs"};
 
     public Card(Value value, Suit suit) {
-    this.value = value;
-    this.suit = suit;
+        this.value = value;
+        this.suit = suit;
     }
 
     public Value getValue() {
-    return value;
+        return value;
     }
 
     public void setValue(Value value) {
-    this.value = value;
+        this.value = value;
     }
 
     public Suit getSuit() {
-    return suit;
+        return suit;
     }
 
     public void setSuit(Suit suit) {
-    this.suit = suit;
+        this.suit = suit;
     }
 }

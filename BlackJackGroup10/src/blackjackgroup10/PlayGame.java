@@ -33,11 +33,11 @@ public class PlayGame {
         Register User1 = new Register();
         //User1.registerUser();
         //User1.userLogin();
-        PlayGame.GamePlay();
+        PlayGame.gamePlay();
+        GameRulesCheck.gameRulesCheck();
     }
     
-    public static void GamePlay(){
-        Scanner sc = new Scanner(System.in);
+    private static void gamePlay(){
         
         Card[] host = CardHandGenerator.generatorHand(2);
         Card[] player = CardHandGenerator.generatorHand(2);
@@ -55,51 +55,6 @@ public class PlayGame {
             userTotal += player[i].getValue().getCardValue();
         }
         System.out.println("Your total is: "+userTotal);
-        int i=0;
-        do{
-            Card[] draw = CardHandGenerator.generatorHand(10);
-            System.out.println("Do you want to draw a card ? (y/n)");
-            input  = sc.nextLine();
-            if (hostTotal <= 15){
-                    hostTotal += draw[i+1].getValue().getCardValue();
-            }
-            
-            if (input.equals("y")){
-                userTotal += draw[i].getValue().getCardValue();
-                System.out.println("Here is your drawed card: "+draw[i].getValue()+ " "+ draw[i].getSuit());
-                System.out.println("Your point is: "+userTotal);
-                if (userTotal > 21 && hostTotal < 21 && hostTotal >= 15){
-                    System.out.println("Host point is: "+hostTotal);
-                    System.out.println("You loose!!!!");
-                    break;
-                }
-                else if (hostTotal <= 15){
-                    hostTotal += draw[i].getValue().getCardValue();
-                }
-                
-                System.out.println("Host point is: "+hostTotal);
-            }
-            else if (input.equals("n")){
-                for (int j=0;hostTotal<=21;j++){
-                        hostTotal += draw[i].getValue().getCardValue();
-                }
-                
-                if (hostTotal < userTotal && userTotal <= 21 || userTotal <= 21 && hostTotal > 21){
-                    System.out.println("Congratulation, you are the Winner !!!!!!");
-                }
-                else if (hostTotal == userTotal){
-                    System.out.println("Not bad, you and host are same point !!!!!!");
-                }
-                else {
-                    System.out.println("Hahaha, you are a looser !!!!");
-                }
-                
-                System.out.println("Host point is: "+hostTotal);
-            }
-            else {
-                System.out.println("Error, answear should be y or n");
-                continue;
-            }
-        }while(input.equals("y"));
-  }
+
+    }
 }

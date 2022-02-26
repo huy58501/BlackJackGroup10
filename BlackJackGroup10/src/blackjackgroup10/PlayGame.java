@@ -3,8 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package blackjackgroup10;
-
-import java.util.Scanner;
 /**
  *
  * @author HoangChuongNguyen (Student ID: 991651113)
@@ -34,10 +32,9 @@ public class PlayGame {
         //User1.registerUser();
         //User1.userLogin();
         PlayGame.gamePlay();
-        GameRulesCheck.gameRulesCheck();
     }
     
-    private static void gamePlay(){
+    public static void gamePlay(){
         
         Card[] host = CardHandGenerator.generatorHand(2);
         Card[] player = CardHandGenerator.generatorHand(2);
@@ -55,6 +52,7 @@ public class PlayGame {
             userTotal += player[i].getValue().getCardValue();
         }
         System.out.println("Your total is: "+userTotal);
-
+        GameRulesCheck.gameRulesCheck();
     }
+    
 }

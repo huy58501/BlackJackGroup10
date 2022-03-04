@@ -17,8 +17,12 @@ public class User {
      * @param givenName
      * @param givenPass 
      */
-    public User(String givenName, String givenPass)
+    
+    public User()
     {
+    }
+
+    public User(String givenName, String givenPass) {
         name = givenName;
         password=givenPass;
     }

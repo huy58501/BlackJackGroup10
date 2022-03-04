@@ -10,11 +10,12 @@ package blackjackgroup10;
  */
 public class UserCheck {
 
-    public String passCheck(String password){
-        return password;
+   User checker = new User();
+    public String passCheck(){
+        return checker.getPassword();
     }
     
-    public String userCheck(String user){
-        return user;
+    public String userCheck(){
+        return checker.getName();
     }
 }

@@ -15,41 +15,13 @@ package blackjackgroup10;
  * if anyone has a total of less than 21, more than 16 and greater than the other person, they will win.
  */
 public class PlayGame {
-    /**
-     * @param args the command line arguments
-     */
-    public static int hostTotal = 0;
-    public static int userTotal = 0;
-    public static String input = null;
     
     public static void main(String[] args) {
         // TODO code application logic here
+        Game game1 = new Game();
         Register User1 = new Register();
         //User1.registerUser();
         //User1.userLogin();
-        PlayGame.gamePlay();
-    }
-    
-    public static void gamePlay(){
-        
-        Card[] host = CardHandGenerator.generatorHand(2);
-        Card[] player = CardHandGenerator.generatorHand(2);
-        //print them for debugging
-        System.out.println("Here is one of two host's card");
-            for (int i=1;i<host.length;i++){
-                System.out.println(host[i].getValue()+ " "+ host[i].getSuit());
-                hostTotal += host[i].getValue().getCardValue();           
-            }
-            
-        System.out.println("Here are your cards");   
-            
-        for (int i=0;i<player.length;i++){
-            System.out.println(player[i].getValue() + " "+ player[i].getSuit());
-            userTotal += player[i].getValue().getCardValue();
-        }
-        System.out.println("Your total is: "+userTotal);
-        
-        // check rules
-        GameRulesCheck.gameRulesCheck();
+        game1.userMoney();
     }
 }

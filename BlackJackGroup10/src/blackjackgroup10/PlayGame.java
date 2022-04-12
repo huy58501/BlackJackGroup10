@@ -1,10 +1,14 @@
 package blackjackgroup10;
+
+import static blackjackgroup10.UserMoneyCheck.hostTotal;
+import static blackjackgroup10.UserMoneyCheck.userTotal;
+
 /**
  *
  * @author HoangChuongNguyen (Student ID: 991651113)
  * 
  * GamePlay rules: 
- * Including 2 player (Host and user), for the frist round, player and host will have 2 cards, 
+ * Including 2 player (Host and user), for the first round, player and host will have 2 cards, 
  * First round, random 2 cards for both user/player and host. The Host will show the User 1 of his 2 cards. 
  * There will be an option for the Player to continue drawing the next card or not.
  * In the second round, if the host has a total of less than 15 points on the card, the host is required to draw a third card, 
@@ -15,13 +19,26 @@ package blackjackgroup10;
  * if anyone has a total of less than 21, more than 16 and greater than the other person, they will win.
  */
 public class PlayGame {
-    
-    public static void main(String[] args) {
-        // TODO code application logic here
-        Game game1 = new Game();
-        Register User1 = new Register();
-        //User1.registerUser();
-        //User1.userLogin();
-        game1.userMoney();
+    public void gamePlay(){
+        GameRulesCheck rules = new GameRulesCheck();
+        Card[] host = CardHandGenerator.generatorHand(2);
+        Card[] player = CardHandGenerator.generatorHand(2);
+        //print them for debugging
+        System.out.println("Here is one of two host's card");
+            for (int i=1;i<host.length;i++){
+                System.out.println(host[i].getValue()+ " "+ host[i].getSuit());
+                hostTotal += host[i].getValue().getCardValue();           
+            }
+            
+        System.out.println("\nHere are your cards");   
+            
+        for (Card user : player) {
+            System.out.println(user.getValue() + " " + user.getSuit());
+            userTotal += user.getValue().getCardValue();
+        }
+        System.out.println("Your total is: "+userTotal);
+        
+        // check rules
+        rules.gameRulesCheck();
     }
 }

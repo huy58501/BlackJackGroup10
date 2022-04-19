@@ -1,8 +1,6 @@
 package blackjackgroup10;
 
 import java.util.Random;
-import blackjackgroup10.Card.Value;
-import blackjackgroup10.Card.Suit;
 
 /**
  *

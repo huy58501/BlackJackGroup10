@@ -1,7 +1,7 @@
 package blackjackgroup10;
 
-import static blackjackgroup10.UserMoneyCheck.hostTotal;
-import static blackjackgroup10.UserMoneyCheck.userTotal;
+import static blackjackgroup10.UserBet.hostTotal;
+import static blackjackgroup10.UserBet.userTotal;
 
 /**
  *

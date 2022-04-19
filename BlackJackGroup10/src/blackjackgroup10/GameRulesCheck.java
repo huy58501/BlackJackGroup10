@@ -19,81 +19,35 @@ import java.util.*;
 public class GameRulesCheck{
         int i=0;
         String input = null;
-
+        UserBet game = new UserBet();
+        
         public void gameRulesCheck(){
             Scanner sc1 = new Scanner(System.in);
-            UserMoneyCheck game = new UserMoneyCheck();
-
-            OUTER:
             do {
-                if (game.userTotal <16){
+                if (game.userTotal < 16){
                     System.out.println("Your point is less than 16, You have to draw a card or you will lose ");
                 }
                 System.out.println("Do you want to draw a card ? (y/n)");
                 input  = sc1.nextLine();
                 Card[] draw = CardHandGenerator.generatorHand(2);
-                if (game.hostTotal <= 15){
+                if (game.hostTotal < 15){
                     for (int j=0;game.hostTotal<16;j++){
                         game.hostTotal += draw[i].getValue().getCardValue();
                     }
                 }
-                // if user choose continue play game
-                switch (input) {
-                    case "y" -> {
-                        // user draw a card
-                        game.userTotal += draw[i].getValue().getCardValue();
-
-                        System.out.println("Here is your drawed card: "+draw[i].getValue()+ " "+ draw[i].getSuit());
-                        System.out.println("Your point is: "+game.userTotal);
+                // if user choose continue to draw a card
+                if (yORn(input)){
+                    game.userTotal += draw[i].getValue().getCardValue();
+                    System.out.println("Here is your drawed card: "+draw[i].getValue()+ " "+ draw[i].getSuit());
+                    System.out.println("Your point is: "+game.userTotal);
                         // rules condition
-                        if (game.userTotal > 21 && game.hostTotal <=21) {
-                            game.userMoney -= game.userBet;
-                            System.out.println("Host point is: "+game.hostTotal);
-                            System.out.println("You bust, host win"+" Your total money is: " + game.userMoney);
-                            break OUTER;
-                        } else if (game.userTotal > 21 && game.hostTotal > 21) {
-                            System.out.println("Host point is: "+game.hostTotal);
-                            System.out.println("You and host are bust, play again!!!"+" Your total money is: " + game.userMoney);
-                            break OUTER;
-                        }
-                    }
-                    case "n" -> {
-                        // if user lower than 16 and stop play.
-                        if (game.userTotal < 16) {
-                            game.userMoney -= game.userBet;
-                            System.out.println("You are lose"+" Your total money is: " + game.userMoney);
-                            break OUTER;
-                        } else if (game.hostTotal < game.userTotal && game.userTotal <= 21 || game.userTotal <= 21 && game.hostTotal > 21){
-                            game.userMoney += game.userBet;
-                            System.out.println("Host point is: "+game.hostTotal);
-                            System.out.println("""
-                                               Congratulation, you are the Winner !!!!!!
-                                               Your total money is: """ + game.userMoney);
-
-                        }
-                        else if (game.hostTotal == game.userTotal && game.userTotal > 21){
-                            System.out.println("""
-                                               Not bad, you and host are busts !!!!!!
-                                               Your total money is: """ + game.userMoney);
-                            System.out.println("Host point is: "+game.hostTotal);
-                        }
-                        else if (game.hostTotal == game.userTotal && game.userTotal <= 21){
-                            System.out.println("Host point is: "+game.hostTotal);
-                            System.out.println("""
-                                               Not bad, you and host are same point !!!!!!
-                                               Your total money is: """ +game.userMoney);
-                        }
-                        else {
-                            game.userMoney -= game.userBet;
-                            System.out.println("Host point is: "+game.hostTotal);
-                            System.out.println("""
-                                               Hahaha, you are a looser !!!!
-                                               Your total money is: """ +game.userMoney);
-                        }   break OUTER;
-                    }
-                    default -> System.out.println("Error, answear should be y or n");
+                    resultDisplay();
                 }
-            } while (input.equals("y"));
+                else {
+                    resultDisplay();
+                    break;
+                }
+            } while (input.equals("n"));
 
             // reset user and host points
             game.userTotal = 0;
@@ -105,10 +59,45 @@ public class GameRulesCheck{
             // ask to continue play game
             System.out.println("Do you want to play another game (y/n)");
             input  = sc1.nextLine();
-            if (input.equals("y"))
+            if (yORn(input))
                 game.userBet();  
             else
                 System.out.println("Game End!!");
             }
         }
+        
+        // win = true, lose = false
+        private boolean ruleCheck(int userTotal, int hostTotal){
+            boolean result;
+            if (game.userTotal <= 21 && game.hostTotal > 21)
+                result = true;
+            else if (game.hostTotal < game.userTotal && game.userTotal <= 21)
+                result = true;
+            else 
+                result = false;
+            return result;
+        }
+        
+        // display result
+        private void resultDisplay(){
+            if (ruleCheck(game.userTotal, game.hostTotal)) {
+                game.userMoney += game.userBet;
+                System.out.println("Host point is: "+game.hostTotal);
+                System.out.println("You Win!!!"+" Your total money is: " + game.userMoney);
+            }
+            else if (game.userTotal == game.hostTotal){
+                System.out.println("Host point is: "+game.hostTotal);
+                System.out.println("You and host are same point!!!"+" Your total money is: " + game.userMoney);
+            }
+            else {
+                game.userMoney -= game.userBet;
+                System.out.println("Host point is: "+game.hostTotal);
+                System.out.println("You Lose!!!"+" Your total money is: " + game.userMoney);
+            }
+        }
+        
+        private boolean yORn(String input){
+            return input.equals("y");
+        }
+        
 }

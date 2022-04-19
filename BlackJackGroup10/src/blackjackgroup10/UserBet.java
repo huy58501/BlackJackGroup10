@@ -10,24 +10,27 @@ import java.util.Scanner;
  *
  * @author chuong5850
  */
-public class UserMoneyCheck {
+public class UserBet {
     static int userMoney = 0;
     static int userBet = 0;
     static int hostTotal = 0;
     static int userTotal = 0;
     Scanner sc = new Scanner(System.in);
     // asking user for bet and check condition
-    public int userBet (){
+    public void userBet (){
         PlayGame gamePlay = new PlayGame();
         System.out.println("How much money you bet for this round? ");
         userBet = sc.nextInt();
-        if (userBet <= userMoney && userBet > 0){
+        if (userBetCheck(userBet)){
             gamePlay.gamePlay();
         }
         else{
             System.out.println("Error, your bet can not greater than your total money or less than 0");
             userBet();
         }
-        return userBet;
+    }
+    
+    public boolean userBetCheck(int userMoneyBet){
+        return userBet <= userMoney && userBet > 0;
     }
 }

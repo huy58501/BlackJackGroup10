@@ -11,7 +11,7 @@ package blackjackgroup10;
 public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
-        UserMoneyBet game1 = new UserMoneyBet();
+        UserMoneyTotal game1 = new UserMoneyTotal();
         Register User1 = new Register();
         //User1.registerUser();
         //User1.userLogin();

@@ -30,7 +30,8 @@ public class UserBet {
         }
     }
     
-    public boolean userBetCheck(int userMoneyBet){
+    //public boolean userBetCheck(int userMoneyBet){
+      public boolean userBetCheck(int userBet){
         return userBet <= userMoney && userBet > 0;
     }
 }

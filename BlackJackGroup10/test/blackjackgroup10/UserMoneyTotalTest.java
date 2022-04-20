@@ -4,11 +4,6 @@
  */
 package blackjackgroup10;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.DataInputStream;
-import java.io.InputStream;
-import static java.lang.System.in;
 import static junit.framework.Assert.assertEquals;
 import org.junit.Test;
 
@@ -37,6 +32,16 @@ public class UserMoneyTotalTest {
         System.out.println("userMoneyTotalCheck");
         UserMoneyTotal totalMoney = new UserMoneyTotal();
           int money = -10;
+          boolean expResult = false;
+          boolean result = totalMoney.moneyCheck(money);
+          assertEquals(expResult,result );
+    }
+    
+        @Test
+    public void testUserMoneyBoundary() {
+        System.out.println("userMoneyTotalCheck");
+        UserMoneyTotal totalMoney = new UserMoneyTotal();
+          int money = 1;
           boolean expResult = true;
           boolean result = totalMoney.moneyCheck(money);
           assertEquals(expResult,result );

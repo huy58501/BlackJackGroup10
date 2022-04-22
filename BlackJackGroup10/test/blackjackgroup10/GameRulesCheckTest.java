@@ -5,6 +5,7 @@
  */
 package blackjackgroup10;
 
+import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 /**
@@ -17,9 +18,21 @@ public class GameRulesCheckTest {
     public void testGameRulesCheck() {
         System.out.println("gameRulesCheck");
         GameRulesCheck instance = new GameRulesCheck();
-        instance.input = "n";
+        instance.input = "y";
+        boolean result = instance.ruleCheck(20, 21);
         boolean expResult = true;
         instance.gameRulesCheck();
+        assertEquals(result,expResult);
     }
+    /*
+    @Test
+    public void testGameRulesCheck2() {
+        System.out.println("gameRulesCheck");
+        GameRulesCheck instance = new GameRulesCheck();
+        instance.gameRulesCheck();
+        boolean result = instance.ruleCheck(21,20);
+        boolean expResult = true;
+        assertEquals(result,expResult);
+    }*/
     
 }

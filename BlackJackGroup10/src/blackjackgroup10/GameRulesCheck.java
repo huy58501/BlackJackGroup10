@@ -67,7 +67,7 @@ public class GameRulesCheck{
         }
         
         // win = true, lose = false
-        private boolean ruleCheck(int userTotal, int hostTotal){
+        public boolean ruleCheck(int userTotal, int hostTotal){
             boolean result;
             if (game.userTotal <= 21 && game.hostTotal > 21)
                 result = true;

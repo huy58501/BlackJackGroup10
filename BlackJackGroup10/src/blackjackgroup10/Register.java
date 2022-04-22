@@ -4,15 +4,20 @@
  */
 package blackjackgroup10;
 
+import java.util.HashMap;
 import java.util.Scanner;
 /**
  *
  */
 public class Register {
     private String name;
-    private String email;
+    private String userName;
+    private String password;
     private int age;
-
+  
+    
+HashMap<String, String> userLogin = new HashMap<>();
+    
     public String getName() {
         return name;
     }
@@ -21,12 +26,20 @@ public class Register {
         this.name = name;
     }
 
-    public String getEmail() {
-        return email;
+    public String getUserName() {
+        return "user";
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return "12345678";
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public int getAge() {
@@ -42,14 +55,23 @@ public class Register {
         System.out.print("Enter your Name: ");
         this.name = input.nextLine();
         System.out.print("Enter your Email: ");
-        this.email = input.nextLine();
+        this.userName = input.nextLine();
         System.out.print("Enter your Age: ");
         this.age = input.nextInt();
 
-        System.out.println(name + " you are registered ");
-
+        System.out.println(name + " you are registered \n");
+        
+        userLogin.put(this.userName, this.password);
+        System.out.println(" User Name: " + userName + "\n Password: " + userLogin.get(userName));
+        userLogin.put(this.name, this.password);
+        
         input.close();
         // UserCheck.passCheck();
+    }
+    
+     public HashMap getUserInfo() {
+        // userLogin.put("user", "123456");
+        return userLogin;
     }
     public void userLogin(){
        // UserCheck.passCheck();

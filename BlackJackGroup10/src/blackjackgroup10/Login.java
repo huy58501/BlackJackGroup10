@@ -11,8 +11,29 @@ package blackjackgroup10;
  */
 import java.util.*;
 public class Login {
+    private String enteredUser;
+    private String enteredPassword;
+    HashMap<String, String> userLoginInfo = new HashMap<>();
+
+    public String getEnteredUser() {
+        return enteredUser;
+    }
+
+    public void setEnteredUser(String enteredUser) {
+        this.enteredUser = enteredUser;
+    }
+
+    public String getEnteredPassword() {
+        return enteredPassword;
+    }
+
+    public void setEnteredPassword(String enteredPassword) {
+        this.enteredPassword = enteredPassword;
+    }
    
-     public void userLogin(){
+    
+    
+    public void userLogin(){
        
     Scanner scan = new Scanner (System.in);
     System.out.println("Enter your user name: ");
@@ -31,4 +52,8 @@ public class Login {
     }
     
   }
+     public Login(HashMap<String, String> loginInfo) {
+        this.userLoginInfo = loginInfo;
+
+    }
 }

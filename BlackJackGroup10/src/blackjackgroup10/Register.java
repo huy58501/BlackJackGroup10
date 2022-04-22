@@ -69,7 +69,7 @@ HashMap<String, String> userLogin = new HashMap<>();
         // UserCheck.passCheck();
     }
     
-     public HashMap getUserInfo() {
+    public HashMap getUserInfo() {
         // userLogin.put("user", "123456");
         return userLogin;
     }

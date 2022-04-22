@@ -41,7 +41,7 @@ public class UserAccessControl {
         // userCheck.setPassword(log.getEnteredPassword());
     }
 
-    private static void Login(Register user1) {
+    public static void Login(Register user1) {
         Login log = new Login(user1.getUserInfo());
         log.userLogin();
 

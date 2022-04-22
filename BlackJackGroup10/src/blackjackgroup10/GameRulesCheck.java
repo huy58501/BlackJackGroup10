@@ -40,15 +40,16 @@ public class GameRulesCheck{
                     game.userTotal += draw[i].getValue().getCardValue();
                     System.out.println("Here is your drawed card: "+draw[i].getValue()+ " "+ draw[i].getSuit());
                     System.out.println("Your point is: "+game.userTotal);
-                        // rules condition
-                    resultDisplay();
+                    if (game.userTotal > 21){
+                        resultDisplay();
+                        break;
+                    }
                 }
-                else {
-                    resultDisplay();
+                else
                     break;
-                }
-            } while (input.equals("n"));
-
+            } while (input.equals("y"));
+            
+            resultDisplay();
             // reset user and host points
             game.userTotal = 0;
             game.hostTotal = 0;
@@ -68,14 +69,11 @@ public class GameRulesCheck{
         
         // win = true, lose = false
         public boolean ruleCheck(int userTotal, int hostTotal){
-            boolean result;
-            if (game.userTotal <= 21 && game.hostTotal > 21)
-                result = true;
-            else if (game.hostTotal < game.userTotal && game.userTotal <= 21)
-                result = true;
-            else 
-                result = false;
-            return result;
+            if (userTotal <= 21 && hostTotal > 21)
+                return true;
+            else if (hostTotal < userTotal && userTotal <= 21)
+                return true;
+            return false;
         }
         
         // display result

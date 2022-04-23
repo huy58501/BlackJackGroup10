@@ -28,7 +28,7 @@ public class User {
     /** The getter for the user name
      * @return the name
      */
-    public String getName() {
+    public String getUserName() {
         return userName;
     }
 
@@ -36,7 +36,7 @@ public class User {
      * The setter for the user name
      * @param givenName the name to set
      */
-    public void setName(String givenName) {
+    public void setUserName(String givenName) {
         userName = givenName;
     }
 

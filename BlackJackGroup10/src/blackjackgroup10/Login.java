@@ -11,46 +11,25 @@ package blackjackgroup10;
  */
 import java.util.*;
 public class Login {
-    private String enteredUser;
-    private String enteredPassword;
     
+    public static void userLogin(){
+        UserMoneyTotal game1 = new UserMoneyTotal();   
+        Scanner scan = new Scanner (System.in);
+        System.out.println("Enter your user name: ");
+        String enteredUser = scan.nextLine();
+        System.out.println("Enter your password: ");
+        String enteredPassword = scan.nextLine();
 
-    public String getEnteredUser() {
-        return enteredUser;
-    }
+        //User login = new User(enteredUser, enteredPassword);
 
-    public void setEnteredUser(String enteredUser) {
-        this.enteredUser = enteredUser;
-    }
+        if(enteredUser.equals(User.userName) && enteredPassword.equals(User.password)){
+            System.out.println("You're logged in successfully " );   
+            game1.userMoney();
+        }   
+        else {
+            System.out.println("Icorect user name or password" );
+        }
 
-    public String getEnteredPassword() {
-        return enteredPassword;
     }
-
-    public void setEnteredPassword(String enteredPassword) {
-        this.enteredPassword = enteredPassword;
-    }
-   
-    
-    
-    public void userLogin(){
-       
-    Scanner scan = new Scanner (System.in);
-    System.out.println("Enter your user name: ");
-    String enteredUser = scan.nextLine();
-    System.out.println("Enter your password: ");
-    String enteredPassword = scan.nextLine();
-    
-    //User login = new User(enteredUser, enteredPassword);
-    
-    UserCheck login = new UserCheck();
-    if(login.passCheck().equals(enteredPassword)){
-        System.out.println("You're logged in successfully " );        
-    }   
-    else {
-        System.out.println("Icorect user name or password" );
-    }
-    
-  }
      
 }

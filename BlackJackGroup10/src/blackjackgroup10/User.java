@@ -9,8 +9,8 @@ package blackjackgroup10;
  * @author chuong5850
  */
 public class User {
-     private String userName;
-    private String password;
+    public static String userName;
+    public static String password;
     
     /**
      * a constructor that takes in the user's name and password 
@@ -20,9 +20,9 @@ public class User {
     {
     }
 
-    public User(String givenName, String givenPass) {
-        userName = givenName;
-        password=givenPass;
+    public User(String userName, String password) {
+       this.userName = userName;
+       this.password=password;
     }
 
     /** The getter for the user name
@@ -36,8 +36,8 @@ public class User {
      * The setter for the user name
      * @param givenName the name to set
      */
-    public void setUserName(String givenName) {
-        userName = givenName;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     /**
@@ -52,8 +52,8 @@ public class User {
      * A setter for the password
      * @param givenPass 
      */
-    public void setPassword(String givenPass)
+    public void setPassword(String password)
     {
-        password = givenPass;
+        this.password = password;
     }
 }

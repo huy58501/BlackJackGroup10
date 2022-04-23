@@ -12,11 +12,6 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         UserAccessControl loginAndRegister = new UserAccessControl();
-        //loginAndRegister.userAccess();
-        UserMoneyTotal game1 = new UserMoneyTotal();
-        //Register User1 = new Register();
-        //User1.registerUser();
-        //User1.userLogin();
-        game1.userMoney();
+        loginAndRegister.userAccess();
     }
 }

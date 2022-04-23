@@ -11,46 +11,21 @@ import java.util.Scanner;
  */
 public class Register {
    
-    private String userName;
-    private String password;
-
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-   
-
-
     public void registerUser() {
         Scanner input = new Scanner(System.in);
         System.out.print("Enter your User Name: ");
-        this.userName = input.nextLine();
+        String userName = input.nextLine();
         System.out.print("Enter your Password: ");
-        this.password = input.nextLine();
+        String password = input.nextLine();
       
 
         
         System.out.println(userName + " You are successfully registered");
       
-        User userch = new User();
-        userch.setUserName(userName);
-        userch.setPassword(password);
-        input.close();
+        User userch = new User(userName,password);
+        Login.userLogin();
         // UserCheck.passCheck();
     }
-    
     
      public static boolean checkLength(String pass) {
 		if (pass.length() >= 8) {

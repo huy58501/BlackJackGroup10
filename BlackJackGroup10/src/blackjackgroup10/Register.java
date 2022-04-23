@@ -17,14 +17,15 @@ public class Register {
         String userName = input.nextLine();
         System.out.print("Enter your Password: ");
         String password = input.nextLine();
-      
-
-        
-        System.out.println(userName + " You are successfully registered");
-      
-        User userch = new User(userName,password);
-        Login.userLogin();
-        // UserCheck.passCheck();
+        if (checkLength(password) && checkSpecial(password) && checkUpper(password)){
+            System.out.println(userName + " You are successfully registered");
+            User userch = new User(userName,password);
+            Login.userLogin();
+        }
+        else {
+            System.out.println("Your password should be more than 8 character, 1 uppercase and 1 special");
+            registerUser();
+        }
     }
     
      public static boolean checkLength(String pass) {

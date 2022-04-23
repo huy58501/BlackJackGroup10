@@ -44,7 +44,7 @@ public class Login {
     //User login = new User(enteredUser, enteredPassword);
     
     UserCheck login = new UserCheck();
-    if(login.passCheck().equals(enteredPassword) && login.userCheck().equals(enteredUser)){
+    if(login.passCheck().equals(enteredPassword)){
         System.out.println("You're logged in successfully " );        
     }   
     else {

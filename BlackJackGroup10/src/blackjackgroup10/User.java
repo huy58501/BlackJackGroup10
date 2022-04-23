@@ -9,7 +9,7 @@ package blackjackgroup10;
  * @author chuong5850
  */
 public class User {
-     private String name;
+     private String userName;
     private String password;
     
     /**
@@ -21,7 +21,7 @@ public class User {
     }
 
     public User(String givenName, String givenPass) {
-        name = givenName;
+        userName = givenName;
         password=givenPass;
     }
 
@@ -29,7 +29,7 @@ public class User {
      * @return the name
      */
     public String getName() {
-        return name;
+        return userName;
     }
 
     /**
@@ -37,7 +37,7 @@ public class User {
      * @param givenName the name to set
      */
     public void setName(String givenName) {
-        name = givenName;
+        userName = givenName;
     }
 
     /**

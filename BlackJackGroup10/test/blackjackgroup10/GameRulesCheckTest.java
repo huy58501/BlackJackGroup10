@@ -18,7 +18,7 @@ public class GameRulesCheckTest {
     public void testGameRulesCheckGood() {
         System.out.println("gameRulesCheck");
         GameRulesCheck instance = new GameRulesCheck();
-        boolean result = instance.ruleCheck(20,18);
+        boolean result = instance.ruleCheck(18,25);
         boolean expResult = true;
         assertEquals(result,expResult);
     }
@@ -27,7 +27,7 @@ public class GameRulesCheckTest {
     public void testGameRulesCheckBad() {
         System.out.println("gameRulesCheck");
         GameRulesCheck instance = new GameRulesCheck();
-        boolean result = instance.ruleCheck(19,20);
+        boolean result = instance.ruleCheck(17,21);
         boolean expResult = false;
         assertEquals(result,expResult);
     }
@@ -36,8 +36,8 @@ public class GameRulesCheckTest {
     public void testGameRulesCheckBoundary() {
         System.out.println("gameRulesCheck");
         GameRulesCheck instance = new GameRulesCheck();
-        boolean result = instance.ruleCheck(21,20);
-        boolean expResult = true;
+        boolean result = instance.ruleCheck(21,21);
+        boolean expResult = false;
         assertEquals(result,expResult);
     }
 }

@@ -22,7 +22,7 @@ public class User {
 
     public User(String userName, String password) {
        this.userName = userName;
-       this.password=password;
+       this.password = password;
     }
 
     /** The getter for the user name
@@ -34,7 +34,7 @@ public class User {
 
     /**
      * The setter for the user name
-     * @param givenName the name to set
+     * @param userName the name to set
      */
     public void setUserName(String userName) {
         this.userName = userName;
@@ -50,7 +50,7 @@ public class User {
     
     /**
      * A setter for the password
-     * @param givenPass 
+     * @param password 
      */
     public void setPassword(String password)
     {

@@ -41,7 +41,6 @@ public class GameRulesCheck{
                     System.out.println("Here is your drawed card: "+draw[i].getValue()+ " "+ draw[i].getSuit());
                     System.out.println("Your point is: "+game.userTotal);
                     if (game.userTotal > 21){
-                        resultDisplay();
                         break;
                     }
                 }

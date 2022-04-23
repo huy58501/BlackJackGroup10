@@ -18,30 +18,29 @@ public class UserAccessControl {
         
         int selector;
         System.out.println("Welcome to BlackJack Game!!\n");
-        System.out.println("To Login enter 1 \nTo Register enter 2");
-        Scanner scan = new Scanner(System.in);
-        selector = scan.nextInt();
-        if (selector == 2) {
-            System.out.println("========================================");
-            System.out.println("Welcome to Registration Page");
-            System.out.println("========================================\n");
-            user1.registerUser();
-        
-        } else if (selector == 1) {
-            System.out.println("========================================");
-            System.out.println("Welcome to Login Page");
-            System.out.println("========================================\n");
-            System.out.println("username: admin , password: 12345678A@");
-            User u = new User("admin","12345678A@");
-            log.userLogin();
-        } else {
-            System.out.println("You didn't enter valid choice ");
-
+        System.out.println("Enter 1 to Login --- 2 to Register");
+        try (Scanner scan = new Scanner(System.in)) {
+            selector = scan.nextInt();
+            switch (selector) {
+                case 2 -> {
+                    System.out.println("========================================");
+                    System.out.println("Welcome to Registration Page");
+                    System.out.println("========================================\n");
+                    user1.registerUser();
+                }
+                case 1 -> {
+                    System.out.println("========================================");
+                    System.out.println("Welcome to Login Page");
+                    System.out.println("========================================\n");
+                    System.out.println("username: admin , password: 12345678A@");
+                    User u = new User("admin","12345678A@");
+                    log.userLogin();
+                }
+                default -> System.out.println("You didn't enter valid choice ");
+            }
+            // user1.registerUser();
+            // userCheck.setName(log.getEnteredUser());
+            // userCheck.setPassword(log.getEnteredPassword());
         }
-        scan.close();
-        // user1.registerUser();
-
-        // userCheck.setName(log.getEnteredUser());
-        // userCheck.setPassword(log.getEnteredPassword());
     }
 }

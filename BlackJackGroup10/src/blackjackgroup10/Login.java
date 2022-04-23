@@ -15,21 +15,24 @@ public class Login {
     public void userLogin(){
         UserMoneyTotal game1 = new UserMoneyTotal();   
         Scanner scan = new Scanner (System.in);
-        System.out.println("Enter your user name: ");
-        String enteredUser = scan.nextLine();
-        System.out.println("Enter your password: ");
-        String enteredPassword = scan.nextLine();
-
+        String enteredUser = null;
+        String enteredPassword = null;
         //User login = new User(enteredUser, enteredPassword);
-
-        if(enteredUser.equals(User.userName) && enteredPassword.equals(User.password)){
+        do {
+            System.out.println("================LOGIN================\n");
+            System.out.println("Enter your user name: ");
+            enteredUser = scan.nextLine();
+            System.out.println("Enter your password: ");
+            enteredPassword = scan.nextLine();
+            
+            if(enteredUser.equals(User.userName) && enteredPassword.equals(User.password)){
             System.out.println("You're logged in successfully " );   
             game1.userMoney();
-        }   
-        else {
-            System.out.println("Icorect user name or password" );
-        }
-
+            }   
+            else {
+                System.out.println("Icorect user name or password, please try again \n" );
+            } 
+        }while (!(enteredUser.equals(User.userName) && enteredPassword.equals(User.password)));
     }
      
 }

@@ -108,7 +108,7 @@ public class RegisterTest {
     public void testCheckUpperBoundry() {
         System.out.println("checkUpper");
         String pass = "Blackjackgroup";
-        boolean expResult = true;
+        boolean expResult = false;
         boolean result = Register.checkUpper(pass);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.

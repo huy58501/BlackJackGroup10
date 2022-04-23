@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class Register {
    
     public void registerUser() {
+        Login log = new Login();
         Scanner input = new Scanner(System.in);
         System.out.print("Enter your User Name: ");
         String userName = input.nextLine();
@@ -20,7 +21,7 @@ public class Register {
         if (checkLength(password) && checkSpecial(password) && checkUpper(password)){
             System.out.println(userName + " You are successfully registered");
             User userch = new User(userName,password);
-            Login.userLogin();
+            log.userLogin();
         }
         else {
             System.out.println("Your password should be more than 8 character, 1 uppercase and 1 special");

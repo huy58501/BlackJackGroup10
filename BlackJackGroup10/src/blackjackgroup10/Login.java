@@ -12,7 +12,7 @@ package blackjackgroup10;
 import java.util.*;
 public class Login {
     
-    public static void userLogin(){
+    public void userLogin(){
         UserMoneyTotal game1 = new UserMoneyTotal();   
         Scanner scan = new Scanner (System.in);
         System.out.println("Enter your user name: ");

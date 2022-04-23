@@ -31,6 +31,8 @@ public class UserAccessControl {
             System.out.println("========================================");
             System.out.println("Welcome to Login Page");
             System.out.println("========================================\n");
+            System.out.println("username: admin , password: 12345678A@");
+            User u = new User("admin","12345678A@");
             log.userLogin();
         } else {
             System.out.println("You didn't enter valid choice ");

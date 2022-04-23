@@ -13,7 +13,7 @@ import java.util.*;
 public class Login {
     private String enteredUser;
     private String enteredPassword;
-    HashMap<String, String> userLoginInfo = new HashMap<>();
+    
 
     public String getEnteredUser() {
         return enteredUser;
@@ -52,8 +52,5 @@ public class Login {
     }
     
   }
-     public Login(HashMap<String, String> loginInfo) {
-        this.userLoginInfo = loginInfo;
-
-    }
+     
 }

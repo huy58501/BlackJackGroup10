@@ -10,24 +10,12 @@ import java.util.Scanner;
  *
  */
 public class Register {
-    private String name;
+   
     private String userName;
     private String password;
-    private int age;
-  
-    
-HashMap<String, String> userLogin = new HashMap<>();
-    
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getUserName() {
-        return "user";
+        return userName;
     }
 
     public void setUserName(String userName) {
@@ -35,46 +23,63 @@ HashMap<String, String> userLogin = new HashMap<>();
     }
 
     public String getPassword() {
-        return "12345678";
+        return password;
     }
 
     public void setPassword(String password) {
         this.password = password;
     }
 
-    public int getAge() {
-        return age;
-    }
+   
 
-    public void setAge(int age) {
-        this.age = age;
-    }
 
     public void registerUser() {
         Scanner input = new Scanner(System.in);
-        System.out.print("Enter your Name: ");
-        this.name = input.nextLine();
-        System.out.print("Enter your Email: ");
+        System.out.print("Enter your User Name: ");
         this.userName = input.nextLine();
-        System.out.print("Enter your Age: ");
-        this.age = input.nextInt();
+        System.out.print("Enter your Password: ");
+        this.password = input.nextLine();
+      
 
-        System.out.println(name + " you are registered \n");
         
-        userLogin.put(this.userName, this.password);
-        System.out.println(" User Name: " + userName + "\n Password: " + userLogin.get(userName));
-        userLogin.put(this.name, this.password);
-        
+        System.out.println(userName + " You are successfully registered");
+      
+        User userch = new User();
+        userch.setUserName(userName);
+        userch.setPassword(password);
         input.close();
         // UserCheck.passCheck();
     }
     
-    public HashMap getUserInfo() {
-        // userLogin.put("user", "123456");
-        return userLogin;
+    
+     public static boolean checkLength(String pass) {
+		if (pass.length() >= 8) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+    
+    public static boolean checkSpecial (String pass) {
+    boolean isSpecial = false;
+		for (int i = 0; i < pass.length(); i++) {
+			if (!Character.isLetterOrDigit(pass.charAt(i))) {
+				isSpecial = true;
+			} 
+                         
+		}
+        return isSpecial;
     }
-    public void userLogin(){
-       // UserCheck.passCheck();
-       // UserCheck.userCheck();
-    }
+    public static boolean checkUpper (String pass) {
+    boolean upper = false;
+		for (int i = 0; i < pass.length(); i++) {
+			if (Character.isDigit(pass.charAt(i))) {
+				upper=true;
+			}
+
+		}
+		
+		return upper;
+	}
+    
 }

@@ -17,15 +17,16 @@ public class UserAccessControl {
 
         int selector;
         System.out.println("Welcome to BlackJack Game!!\n");
-        System.out.println("To Login enter 1\nTo Register enter 2");
+        System.out.println("To Login enter 1"); //\nTo Register enter 2");
         Scanner scan = new Scanner(System.in);
         selector = scan.nextInt();
-        if (selector == 2) {
+       /* if (selector == 2) {
             System.out.println("========================================");
             System.out.println("Welcome to Registration Page");
             System.out.println("========================================\n");
             user1.registerUser();
-        } else if (selector == 1) {
+        
+        } else */ if (selector == 1) {
             System.out.println("========================================");
             System.out.println("Welcome to Login Page");
             System.out.println("========================================\n");
@@ -41,8 +42,8 @@ public class UserAccessControl {
         // userCheck.setPassword(log.getEnteredPassword());
     }
 
-    public static void Login(Register user1) {
-        Login log = new Login(user1.getUserInfo());
+    private static void Login(Register user1) {
+        Login log = new Login();
         log.userLogin();
 
         /*
@@ -65,4 +66,3 @@ public class UserAccessControl {
         }
     }
 }
-

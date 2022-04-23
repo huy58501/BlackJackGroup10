@@ -14,8 +14,5 @@ public class UserCheck {
     public String passCheck(){
         return checker.getPassword();
     }
-    
-    public String userCheck(){
-        return checker.getName();
-    }
+ 
 }

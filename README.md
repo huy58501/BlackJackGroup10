@@ -1,6 +1,8 @@
 # BlackJackGroup10
 Black Jack game - Group 10
+
         Game Rules:
+        
 Two players (Host and user) will play the game. 
 
 First-round, the Player and host will have two random cards. 
